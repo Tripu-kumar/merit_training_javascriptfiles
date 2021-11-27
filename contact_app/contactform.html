@@ -1,0 +1,18 @@
+<form action="/addcontact" method="POST" enctype="multipart/form-data">
+    <div class="container">
+    <label for="profilepic"><b>PROFILEPIC</b></label>
+    <input type="file"  name="profilepic">
+    <label for="fullname"><b>fullname</b></label>
+    <input type="text" placeholder="Enter Fullname" name="fullname">
+    <label for="email"><b>email</b></label>
+    <input type="text" placeholder="Enter Email" name="email">
+    <label for="mobile No"><b>mobileno</b></label>
+    <input type="number" placeholder="Enter Mobile Number" name="mobileno">
+    <select name="groups">
+        <option value="friends">friends</option>
+        <option value="family">family</option>
+        <option value="collegues">collegues</option>
+    </select>
+    <button type="submit" class="registerbtn"><strong>SAVE</strong></button>
+    </div>
+    </form>

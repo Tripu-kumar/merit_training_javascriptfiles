@@ -1,0 +1,31 @@
+html
+   head
+      title "Profile page"
+   body
+     h1(style="color:red; text-align:center") contact page 
+     form(action="/contactform")
+         button(type="submit") ADDCONTACT        
+     table(border="2",cellpadding="10") 
+        thead 
+          th PROFILEPIC
+          th NAME 
+          th EMAIL
+          th MOBILENO 
+          th GROUP
+          th DELETE CONTACT
+          th UPDATE CONTACT   
+        each val in allcontacts 
+             tr 
+                   td 
+                     img(src=`/${val.profilePic}` width="200px")
+                   td   #{val.fullname}
+                   td   #{val.email}
+                   td   #{val.mobileno}
+                   td   #{val.groups}
+                   td 
+                      form(action=`/deletecontact/${val._id}`)
+                          button(type="submit") DELETECONTACT 
+                   td
+                      form(action=`/updatecontactform/${val._id}/${val.profilePic}/${val.fullname}/${val.email}/${val.mobileno}/${val.groups}`)
+                          button(type="submit") UPDATECONTACT 
+     

@@ -1,0 +1,33 @@
+html    
+    body 
+        form(action="/updatecontact" method="POST" enctype="multipart/form-data")
+            label ID
+            input(type="text" value=`${contactid}` name="id")
+            br
+            br
+            label Update Profile Pic 
+            input(type="file" name="profilepic")
+            br
+            br
+            label Name    
+            input(type="text" value=`${fullname}`  name="fullname")
+            br
+            br
+            label Email    
+            input(type="text" value=`${email}` name="email")
+            br
+            br
+            label MobileNo   
+            input(type="number" value=`${mobileno}` name="mobileno")
+            br
+            br
+            label Select Groups 
+            select(name="groups")
+                  
+                  option(value = "family" selected = ("family" == `${groups}`)) family
+                  option(value = "friends" selected = ("friends" == `${groups}`))  friends  
+                  option(value = "collegues" selected = ("collegues" == `${groups}`))  collegues 
+
+            br
+            br
+            button EDIT  

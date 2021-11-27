@@ -1,0 +1,5 @@
+{
+    "liveshare.allowInvites": "all",
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true
+}

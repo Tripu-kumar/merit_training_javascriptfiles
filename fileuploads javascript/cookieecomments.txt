@@ -1,0 +1,22 @@
+res.cookie("username",req.body.username)
+res.cookie("pwd",req.body.pwd);
+function authenticate(req,res,next){
+    MongoClient.connect(url,function(err,con){
+    var db = con.db("merit")
+    db.collection('users').find({username:req.cookies.username}).toArray(function(err,data){
+                       console.log(data)
+                       if(data.length!== 0){
+                       if(req.cookies.username == data[0].username){
+                       if(req.cookies.pwd == data[0].pwd){next()}
+                        }
+                    
+                    else{
+                        res.redirect("/loginform")
+                    } 
+                }  
+                else{
+                    res.redirect("/loginform")
+                }
+    
+        })
+    })}
